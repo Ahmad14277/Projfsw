@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<body onload="myFunction()" style="margin:0;">
+    <div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+    {% if Res %}
+    <h1 style="margin-left:35%;margin-right: 35%;margin-top: 15%;">NEWS is Real</h1>
+    {% else  %}
+    <h1 style="margin-left:35%;margin-right: 35%;margin-top: 15%;">NEWS is Fake</h1>
+    {% endif %}
+
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+{% endblock %}

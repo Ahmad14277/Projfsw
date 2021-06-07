@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="margin-left: 5%">Welcome to FakeND</h1>
+    <h5 style="margin-left: 5%">Insert the data in text box and Press the submit.</h5>
+<form style="margin-top: 3%;margin-left: 5%;" action="http://127.0.0.1:8000/FakeND/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
